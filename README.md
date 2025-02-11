@@ -1,26 +1,11 @@
 
-# Accelerate Application Modernization: Low Code Application Development with AWS Amplify, AppSync, and MongoDB Atlas
+# Offline caching app with AWS Amplify, Tanstack, AppSync and MongoDB Atlas
 
-In today’s fast-paced digital landscape, turning innovative ideas into fully functional applications quickly and efficiently is essential for developers, startups, and business consultants. This repository is designed to empower you to do just that. By leveraging AWS Amplify for seamless front-end development, AppSync for robust and scalable backend services, and MongoDB Atlas for a flexible and powerful database solution, it offers a comprehensive, low-code solution that drastically reduces development time while maintaining high standards of performance and scalability.
+This application demonstrates the offline caching capabilities of TanStack Query in conjunction with AWS Amplify, AWS AppSync, and MongoDB Atlas. By leveraging TanStack Query's caching mechanisms, the app ensures data availability even without an active network connection. AWS Amplify streamlines the development process, while AWS AppSync provides a robust GraphQL API layer, and MongoDB Atlas offers a scalable database solution. This integration showcases how TanStack Query's offline caching can be effectively utilized within a full-stack application architecture. 
 
-This repository provides a starter template for building applications with React+Vite and AWS Amplify, seamlessly connecting to MongoDB Atlas. It simplifies the setup for authentication, API integration, and database capabilities. With a foundational React application pre-integrated with AWS Amplify, this template is optimized for scalability and performance, making it perfect for developers, startups, and business consultants seeking to jumpstart their projects with pre-configured AWS services like Cognito, AppSync, and MongoDB Atlas
+## Target Architecture 
 
-
-## AWS Amplify
-[AWS Amplify](https://aws.amazon.com/amplify) is a comprehensive development platform that simplifies the creation of full-stack applications with minimal configuration. It provides a set of tools and services that integrate seamlessly with popular frameworks like React, Angular, and Vue, enabling developers to easily set up scalable backends, manage authentication, and deploy applications with a few simple commands. The 2.0 features of AWS Amplify enhance support for CI/CD workflows, improve the developer experience with the Amplify CLI, and expand capabilities for backend infrastructure as code. These updates facilitate easier management and deployment of cloud resources, integration of serverless functions, and connection to MongoDB Atlas data sources through AWS AppSync and Lambda Resolver, thus significantly reducing the time and effort required to build and scale modern applications
-
-## AWS AppSync
-[AWS AppSync](https://aws.amazon.com/appsync/) is a fully managed service that simplifies the development of GraphQL APIs by automatically handling data fetching, real-time updates, and offline synchronization. It seamlessly integrates with various data sources, including MongoDB Atlas through AppSync Lambda Resolvers and Driver, allowing developers to build scalable and flexible applications with ease. AppSync’s features include built-in support for real-time data updates and offline access, reducing the complexity of managing data interactions and enhancing application performance
-
-## MongoDB Atlas
-
-[MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) is a fully managed cloud database service known for its operational excellence and scalability. It offers advanced features like automated backups, scaling, and monitoring, ensuring high availability and performance. Notably, Atlas includes Vector Search capabilities, which are optimized for Generative AI use cases, enabling efficient search and retrieval of high-dimensional data. This feature enhances the ability to perform complex queries and data analysis, making it ideal for applications requiring sophisticated data interactions and AI-driven insights
-
-## Reference Architecture 
-
-![Reference Architecture](Images/Reference_Architecture.png)
-
-
+![Reference Architecture](/Images/Amplfi%20Tanstack%20Github%20ref%20arch.png)
 
 ## Prerequisites
 
@@ -34,6 +19,7 @@ This repository provides a starter template for building applications with React
 - **Authentication**: Setup with Amazon Cognito for secure user authentication.
 - **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
 - **Database**: Real-time database powered by MongoDB Atlas.
+- **Tanstack Query**: Helps persist query data in storage, ensuring data availability even when the device is offline.
 
 
 ## Deploying to AWS
@@ -53,7 +39,7 @@ Follow the [link](https://www.mongodb.com/docs/atlas/tutorial/create-atlas-accou
 
 #### Clone the GitHub Repository
 
-``` git clone https://github.com/mongodb-partners/amplify_appsync_mongodb_atlas_startup.git```
+``` git clone https://github.com/mongodb-partners/amplify-mongodb-tanstack-offline```
 
 ### Step 3
 
@@ -196,11 +182,7 @@ Open the webpage on the localhost and test the application.
 
 For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/react/start/quickstart/#deploy-a-fullstack-app-to-aws) of our documentation.
 
-## Contributing
-
-
-## License
-
 
 ## Conclusion
-In conclusion, this GitHub repository provides a comprehensive solution for accelerating application modernization through low-code development with AWS Amplify, AppSync, and MongoDB Atlas. By leveraging the power of these technologies, developers, startups, and business consultants can quickly and efficiently build scalable and performant applications. With pre-configured authentication, API integration, and real-time database capabilities, this starter template simplifies the development process and reduces time to market. Whether you're a seasoned developer or just starting out, this repository is a valuable resource for jumpstarting your projects and leveraging the full potential of AWS services. Start building your next application today!
+
+In this repository, we've demonstrated how to integrate TanStack Query's offline caching capabilities with AWS Amplify, AWS AppSync, and MongoDB Atlas to build a robust, offline-first application. By leveraging the power of these technologies, developers, startups, and business consultants can quickly and efficiently build scalable and performant applications without worrying about network connectivity. With pre-configured authentication, API integration, and real-time database capabilities, this starter template simplifies the development process and reduces time to market. Whether you're a seasoned developer or just starting out, this repository is a valuable resource for jumpstarting your projects and leveraging the full potential of AWS services. Start building your next application today!
