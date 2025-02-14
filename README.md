@@ -1,7 +1,12 @@
 
 # Offline caching app with AWS Amplify, Tanstack, AppSync and MongoDB Atlas
 
-This application demonstrates the offline caching capabilities of TanStack Query in conjunction with AWS Amplify, AWS AppSync, and MongoDB Atlas. By leveraging TanStack Query's caching mechanisms, the app ensures data availability even without an active network connection. AWS Amplify streamlines the development process, while AWS AppSync provides a robust GraphQL API layer, and MongoDB Atlas offers a scalable database solution. This integration showcases how TanStack Query's offline caching can be effectively utilized within a full-stack application architecture. 
+This application demonstrates how to implement Optimistic UI with AWS Amplify, AWS AppSync, and MongoDB Atlas, allowing MongoDB CRUD operations to be rendered immediately on the UI before the request roundtrip has completed.  The implementation leverages [TanStack Query](https://tanstack.com/query/latest/docs/react/overview) and is based on this [AWS Amplify Doc](https://docs.amplify.aws/react/build-a-backend/data/optimistic-ui/).  This application is effectively a re-implementation of a [Amplify MongoDB Atlas Todo](https://github.com/mongodb-partners/amplify_appsync_mongodb_atlas_startup) but now with offline capabilities.
+
+
+ By leveraging TanStack Query's caching mechanisms, the app ensures data availability even without an active network connection. AWS Amplify streamlines the development process, while AWS AppSync provides a robust GraphQL API layer, and MongoDB Atlas offers a scalable database solution. This integration showcases how TanStack Query's offline caching can be effectively utilized within a full-stack application architecture. 
+
+ Note: In our solution, we implemented simple optimistic first-past-the-post conflict resolution.  This may or may not suite your production needs.  If you have an idea on how to improve the code, we free to submit your PRs! 
 
 ## Target Architecture 
 
@@ -41,9 +46,9 @@ Follow the [link](https://www.mongodb.com/docs/atlas/tutorial/create-atlas-accou
 
 ``` git clone https://github.com/mongodb-partners/amplify-mongodb-tanstack-offline```
 
-### Step 3
+### Step 3 (optional if you need to debug your application locally)
 
-#### Setup the AWS CLI credentials
+#### Setup the AWS CLI credentials 
 
 ```
 export AWS_ACCESS_KEY_ID=
@@ -53,7 +58,7 @@ export AWS_SESSION_TOKEN=
 
 ### Step 4
 
-#### Deploy the To-do Application in AWS Amplify
+#### Deploy the Todo Application in AWS Amplify
 
 
 Open the AWS Amplify console and Select the Github Option 
