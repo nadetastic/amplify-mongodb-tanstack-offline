@@ -4,7 +4,9 @@ import type { Schema } from "../data/resource";
 import { connectToMongodb } from "./mdbUtils";
 import { ObjectId } from "mongodb";
 
-export const handler: Schema["addTodo"]["functionHandler"] = async (event) => {
+export const handler: Schema["deleteTodo"]["functionHandler"] = async (
+  event
+) => {
   // Connect to MongoDB
   const [client, , collection] = connectToMongodb();
   try {
@@ -20,24 +22,17 @@ export const handler: Schema["addTodo"]["functionHandler"] = async (event) => {
       _id: new ObjectId(id),
       username: user,
     });
-    // response = { deleted_count: deleteResult.deletedCount };
 
     return {
       statusCode: 200,
-      todos: {
-        _id: id,
-        username: user,
-        deleted_count: deleteResult.deletedCount,
-      },
+      count: deleteResult.deletedCount,
+      deletedId: id,
     };
   } catch (e) {
     return {
       statusCode: 500,
-      todos: {
-        _id: event.arguments._id!,
-        username: (event.identity as AppSyncIdentityCognito).username,
-        deleted_count: 0,
-      },
+      count: 0,
+      deletedId: "",
     };
   } finally {
     if (client) {

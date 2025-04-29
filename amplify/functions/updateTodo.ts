@@ -25,6 +25,7 @@ export const handler: Schema["updateTodo"]["functionHandler"] = async (
     // return successResponse(updateResult, payload);
     return {
       statusCode: 200,
+
       count: updateResult.modifiedCount,
       todo: { ...payload, _id: event.arguments._id },
     };

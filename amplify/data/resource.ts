@@ -12,22 +12,22 @@ const schema = a.schema({
     content: a.string().required(),
   }),
   ListTodoResponse: a.customType({
-    statusCode: a.integer(),
-    todoList: a.ref("Todo").array(),
+    statusCode: a.integer().required(),
+    todoList: a.ref("Todo").array().required(),
   }),
   AddTodoResponse: a.customType({
-    statusCode: a.integer(),
-    todo: a.ref("Todo"),
+    statusCode: a.integer().required(),
+    todo: a.ref("Todo").required(),
   }),
   DeleteTodoResponse: a.customType({
-    statusCode: a.integer(),
-    count: a.integer(),
-    deletedId: a.string(),
+    statusCode: a.integer().required(),
+    count: a.integer().required(),
+    deletedId: a.string().required(),
   }),
   UpdatedTodoResponse: a.customType({
-    statusCode: a.integer(),
-    count: a.integer(),
-    todo: a.ref("Todo"),
+    statusCode: a.integer().required(),
+    count: a.integer().required(),
+    todo: a.ref("Todo").required(),
   }),
   addTodo: a
     .mutation()
