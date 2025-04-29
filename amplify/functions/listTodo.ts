@@ -19,12 +19,19 @@ export const handler: Schema["listTodo"]["functionHandler"] = async (event) => {
 
     const payload = { username: user };
     console.log("retrieving results");
+    console.log(`payload: ${JSON.stringify(payload)}`);
     const response = await collection.find(payload).toArray();
     console.log(`results retrieved: ${JSON.stringify(response)}`);
 
+    // Map MongoDB documents to the expected type
+    const todoList = response.map((item) => ({
+      _id: item._id.toString(), // Convert ObjectId to string
+      content: item.content || "", // Ensure content exists
+    }));
+
     return {
       statusCode: 200,
-      todoList: [],
+      todoList: todoList,
     };
     // return response.body;
   } catch (e) {
