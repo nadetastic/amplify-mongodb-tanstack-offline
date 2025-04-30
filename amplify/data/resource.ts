@@ -9,15 +9,15 @@ import {
 const schema = a.schema({
   Todo: a.customType({
     _id: a.id().required(),
-    content: a.string().required(),
+    content: a.string(),
   }),
   ListTodoResponse: a.customType({
     statusCode: a.integer().required(),
-    todoList: a.ref("Todo").array().required(),
+    todoList: a.ref("Todo").array(),
   }),
   AddTodoResponse: a.customType({
     statusCode: a.integer().required(),
-    todo: a.ref("Todo").required(),
+    todo: a.ref("Todo"),
   }),
   DeleteTodoResponse: a.customType({
     statusCode: a.integer().required(),
@@ -27,7 +27,7 @@ const schema = a.schema({
   UpdatedTodoResponse: a.customType({
     statusCode: a.integer().required(),
     count: a.integer().required(),
-    todo: a.ref("Todo").required(),
+    todo: a.ref("Todo"),
   }),
   addTodo: a
     .mutation()
