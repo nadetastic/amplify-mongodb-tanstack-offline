@@ -15,9 +15,11 @@
     "@tanstack/react-query-devtools": "^5.64.2",
     "aws-amplify": "^6.2.0",
     "dotenv": "^16.5.0",
+    "json-schema-to-ts": "^3.1.1",
     "mongodb": "^6.12.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "ts-algebra": "^2.0.0"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.0.4",
