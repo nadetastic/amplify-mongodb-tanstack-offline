@@ -75,12 +75,15 @@ function App() {
   const updateTodo = async (todo: Todo) => {
     if (!todo) return;
 
-    const itemContent = window.prompt("Todo content", todo.content);
+    const itemContent = window.prompt("Todo content", todo.content as string);
     if (!itemContent) return;
 
     const updatedTodo: Todo = { ...todo, content: itemContent };
 
-    updateMutation.mutate({ ...updatedTodo });
+    updateMutation.mutate({
+      _id: updatedTodo._id,
+      content: updatedTodo.content as string,
+    });
   };
 
   const updateMutation = useMutation({
